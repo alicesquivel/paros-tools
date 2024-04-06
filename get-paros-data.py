@@ -39,7 +39,8 @@ def loadInfluxClient(pickle_path):
             client = influxdb_client.InfluxDBClient(
                 url = influx_dict["idb_url"],
                 token = influx_dict["idb_token"],
-                org = influx_dict["idb_org"]
+                org = influx_dict["idb_org"],
+                timeout = 100000_000
             )
 
             query_api = client.query_api()
