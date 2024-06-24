@@ -147,7 +147,11 @@ def main():
     print(f"{idb_query}\n")
 
     idb_result = idb_query_api.query_data_frame(query=idb_query)
-    
+
+    # Debugging output for raw query result
+    print("Raw query result:")
+    print(idb_result)
+
     dfs_list = []
     if isinstance(idb_result, list):
         for r in idb_result:
